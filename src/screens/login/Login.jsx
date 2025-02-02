@@ -5,6 +5,25 @@ import Input from './components/Input'
 const Login = () => {
     const [formData, setFormData] = useState({})
 
+    const login = async () => {
+        try {
+            const response = await fetch("http://172.20.208.147:5001/api/v1/auth/login", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Accept": "application/json",
+                },
+                body: JSON.stringify(formData)
+            })
+
+            const data = await response.json()
+
+            console.log(data)
+        } catch (error) {
+            console.error(error)
+        }
+    }
+
     return (
         <View className='h-full p-5 gap-4 justify-center'>
             <Text className='text-4xl text-black text-center mb-3'>Login</Text>
@@ -13,9 +32,7 @@ const Login = () => {
 
             <Input name="password" setFormData={setFormData} value={formData?.password} placeholder="Enter your password" />
 
-            <TouchableOpacity onPress={() => {
-                console.log(formData)
-            }} className='bg-blue-700 py-6'>
+            <TouchableOpacity onPress={login} className='bg-blue-700 py-6'>
                 <Text className='text-center text-white text-xl'>
                     Login
                 </Text>
