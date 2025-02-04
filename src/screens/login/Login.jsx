@@ -1,13 +1,15 @@
 import { Text, View, TouchableOpacity } from 'react-native'
 import { useState } from 'react'
 import Input from './components/Input'
+import { useMMKVString } from 'react-native-mmkv';
 
 const Login = () => {
     const [formData, setFormData] = useState({})
+    const [token, setToken] = useMMKVString('token')
 
     const login = async () => {
         try {
-            const response = await fetch("http://172.20.208.147:5001/api/v1/auth/login", {
+            const response = await fetch("http://172.20.208.140:5001/api/v1/auth/login", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -16,9 +18,11 @@ const Login = () => {
                 body: JSON.stringify(formData)
             })
 
-            const data = await response.json()
+            if (response.ok) {
+                const data = await response.json()
 
-            console.log(data)
+                setToken(data.token)
+            }
         } catch (error) {
             console.error(error)
         }
