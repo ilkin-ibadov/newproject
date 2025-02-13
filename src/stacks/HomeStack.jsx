@@ -9,7 +9,7 @@ const Stack = createNativeStackNavigator();
 
 const HomeStack = () => {
     return (
-        <Stack.Navigator screenOptions={{ header: () => <Header /> }}>
+        <Stack.Navigator initialRouteName='Gallery' screenOptions={{ header: () => <Header /> }}>
             <Stack.Screen name="Users" component={Users} />
             <Stack.Screen name="UserDetails" component={UserDetails} />
             <Stack.Screen name="Todos" component={Todos} />
