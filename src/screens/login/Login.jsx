@@ -1,7 +1,7 @@
 import { Text, View, TouchableOpacity } from 'react-native'
 import { useState } from 'react'
 import Input from './components/Input'
-import { useMMKVString } from 'react-native-mmkv';
+import { useMMKVString} from 'react-native-mmkv';
 
 const Login = () => {
     const [formData, setFormData] = useState({})
@@ -17,6 +17,8 @@ const Login = () => {
                 },
                 body: JSON.stringify(formData)
             })
+
+            console.log(response.status)
 
             if (response.ok) {
                 const data = await response.json()

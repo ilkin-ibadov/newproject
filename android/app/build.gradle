@@ -74,9 +74,9 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
 
-    namespace "com.newproject"
+    namespace "com.users.app"
     defaultConfig {
-        applicationId "com.newproject"
+        applicationId "com.users.app"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
@@ -113,6 +113,8 @@ dependencies {
     } else {
         implementation jscFlavor
     }
+
+    implementation("androidx.activity:activity:1.9.+")
 }
 
 apply from: file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesAppBuildGradle(project)
