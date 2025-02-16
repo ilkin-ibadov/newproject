@@ -1,12 +1,14 @@
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context'
 import "./global.css"
-import Navigation from './src/stacks/Navigation'
+import { View, Text } from 'react-native'
 
 const App = () => {
   return (
     <SafeAreaProvider>
       <SafeAreaView style={{ flex: 1 }}>
-        <Navigation />
+        <View>
+          <Text>Homepage</Text>
+        </View>
       </SafeAreaView>
     </SafeAreaProvider>
   )
