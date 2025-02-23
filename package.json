@@ -16,6 +16,7 @@
     "nativewind": "^4.1.23",
     "react": "18.2.0",
     "react-native": "0.74.3",
+    "react-native-dotenv": "^3.4.11",
     "react-native-fast-image": "^8.6.3",
     "react-native-image-picker": "^8.0.0",
     "react-native-mmkv": "2.9.0",
@@ -25,6 +26,8 @@
     "react-native-safe-area-context": "^5.1.0",
     "react-native-screens": "^4.6.0",
     "react-native-svg": "^15.11.1",
+    "react-native-webview": "^13.13.2",
+    "react-native-youtube-iframe": "^2.3.0",
     "tailwindcss": "^3.4.17"
   },
   "devDependencies": {
